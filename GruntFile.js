@@ -21,10 +21,11 @@ module.exports = function (grunt)
 			},
 			dist: {
 				src: [
-					   'src/resources/js/routes.js',
+					   'app/js/*.js',
+					   'app/js/**/*.js'
 
 				],
-				dest: 'src/<%= pkg.name %>.js'
+				dest: 'public/app.js'
 			},
 			deps: {
 				src: [
