@@ -6,6 +6,19 @@ module.exports = function (grunt)
 			options: {
 				separator: "\n\n"
 			},
+			css : {
+				development : {
+					options : {
+						compress:true
+					},
+					files : {
+						"public/app.css":[
+							"app/css/*.css",
+							"app/css/**/*.css"
+						]
+					}
+				}
+			},
 			dist: {
 				src: [
 					   'src/resources/js/routes.js',
@@ -24,10 +37,9 @@ module.exports = function (grunt)
 				dest: 'src/<%= pkg.name %>-deps.js'
 			},
 			css: {
-				src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-						'src/resources/css/styles.css'
+				src: ['app/css/*.css'
 				],
-				dest: 'src/resources/css/<%= pkg.name %>.css'
+				dest: 'public/app.css'
 			},
 			move: {
 				src: ['bower_components/angularjs/angular.min.js.map'],
@@ -49,8 +61,7 @@ module.exports = function (grunt)
 				tasks: ['concat:dist']
 			},
 			styles: {
-				files: ['src/resources/css/*.scss'],
-				tasks: ['sass']
+				files: ['app/css/**/*.css']
 			}
 		}
 	});
@@ -58,16 +69,16 @@ module.exports = function (grunt)
 	//npm tasks
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-ngdocs');
+	grunt.loadNpmTasks('grunt-contrib-less');
 
 	//tasks
 	grunt.registerTask('default', 'Default Task Alias', ['build']);
 
 	grunt.registerTask('build', 'Build the application', 
-		['sass:dev',
+		[
 		'concat'
 		]);
 }
