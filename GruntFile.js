@@ -13,16 +13,16 @@ module.exports = function (grunt)
 					},
 					files : {
 						"public/app.css":[
-							"app/css/*.css",
-							"app/css/**/*.css"
+							"public/css/*.css",
+							"public/css/**/*.css"
 						]
 					}
 				}
 			},
 			dist: {
 				src: [
-					   'app/js/*.js',
-					   'app/js/**/*.js'
+					   'public/js/*.js',
+					   'public/js/**/*.js'
 
 				],
 				dest: 'public/app.js'
@@ -38,7 +38,7 @@ module.exports = function (grunt)
 				dest: 'src/<%= pkg.name %>-deps.js'
 			},
 			css: {
-				src: ['app/css/*.css'
+				src: ['public/css/*.css'
 				],
 				dest: 'public/app.css'
 			},
@@ -62,7 +62,7 @@ module.exports = function (grunt)
 				tasks: ['concat:dist']
 			},
 			styles: {
-				files: ['app/css/**/*.css']
+				files: ['public/css/**/*.css']
 			}
 		}
 	});
