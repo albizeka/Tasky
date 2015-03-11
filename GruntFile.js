@@ -13,8 +13,8 @@ module.exports = function (grunt)
 					},
 					files : {
 						"public/app.css":[
-							"public/css/*.css",
-							"public/css/**/*.css"
+							"src/resources/css/*.css",
+							"src/resources/css/**/*.css"
 						]
 					}
 				}
@@ -25,7 +25,11 @@ module.exports = function (grunt)
 					   'src/resources/js/**/*.js'
 
 				],
-				dest: 'public/app.js'
+				dest: 'public/app.js',
+				src : [
+					'src/resources/bootstrap/configs/*.js'
+				],
+				dest : 'public/configs.js'
 			},
 			deps: {
 				src: [
@@ -38,7 +42,8 @@ module.exports = function (grunt)
 				dest: 'src/<%= pkg.name %>-deps.js'
 			},
 			css: {
-				src: ['public/css/*.css'
+				src: ['src/resources/css/*.css',
+				'src/resources/css/**/*.css'
 				],
 				dest: 'public/app.css'
 			},
