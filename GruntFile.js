@@ -25,11 +25,7 @@ module.exports = function (grunt)
 					   'src/resources/js/**/*.js'
 
 				],
-				dest: 'public/app.js',
-				src : [
-					'src/resources/bootstrap/configs/*.js'
-				],
-				dest : 'public/configs.js'
+				dest: 'public/app.js'
 			},
 			deps: {
 				src: [
@@ -67,7 +63,7 @@ module.exports = function (grunt)
 				tasks: ['concat:dist']
 			},
 			styles: {
-				files: ['src/resources/css/**/*.css']
+				files: ['src/res/resources/css/**/*.css']
 			}
 		}
 	});

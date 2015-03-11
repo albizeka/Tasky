@@ -1,10 +1,4 @@
-'use strict';
-
 var app = angular.module('tasky' , ['ui.router']);
-
-app.controller('LoginController' , function ($scope){
-	$scope.message = "Simple Login";
-});
 
 'use strict';
 
@@ -19,3 +13,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		})
 
 });
+
+'use strict';
+
+app.controller('LoginController' , function ($scope){
+	$scope.message = "Simple Login";
+});
+
+App.controller("RegisterController" , function ($scope){
+	$scope.message = "Register";
+})
