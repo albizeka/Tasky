@@ -67,7 +67,7 @@ module.exports = function (grunt)
 				tasks: ['concat:dist']
 			},
 			styles: {
-				files: ['public/css/**/*.css']
+				files: ['src/resources/css/**/*.css']
 			}
 		}
 	});
