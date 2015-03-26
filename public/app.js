@@ -11,13 +11,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			url : '/login',
 			templateUrl:'public/views/login.html'
 		})
+		.state('register' , {
+			url : '/register',
+			template : "<h1>Register here</h1>"
+		})
 
 });
 
 'use strict';
 
 app.controller('LoginController' , function ($scope){
-	$scope.message = "Simple Login";
+	
 });
 
 App.controller("RegisterController" , function ($scope){
