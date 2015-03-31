@@ -1,1 +1,1 @@
-The idea of this repository is to learn about working envoirments with angularjs and making a beautiful things with it
+Tasky is a school project
