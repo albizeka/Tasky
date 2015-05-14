@@ -1,3 +1,3 @@
-App.controller("RegisterController" , function ($scope){
+app.controller("RegisterController" , function ($scope){
 	$scope.message = "Register";
 })

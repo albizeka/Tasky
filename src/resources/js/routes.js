@@ -13,5 +13,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			url : '/register',
 			template : "<h1>Register here</h1>"
 		})
+		.state('home' , {
+			url : '/home',
+			template : "<h1>home here</h1>"
+		})
+
 
 });
